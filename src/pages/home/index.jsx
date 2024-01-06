@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-//import bannerImage from "../../assets/";
+import banner from "../../assets/banner.png";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Container, TextContent, Title, TitleHighLight} from "./styles"
@@ -31,7 +31,7 @@ const Home = () => {
                 <Button title="Começar agora" variant="secondary" onClick={handleClickSignIn} />
             </div>
             <div>
-                <img src="#" alt="Imagem principal" />
+                <img src={banner} alt="Imagem principal" />
             </div>
         </Container>
     </>)

@@ -1,10 +1,9 @@
 import React from 'react'
-import logo from "../../assets/logo-dio.jpg";
+import logo from "../../assets/logo-dio.png";
 import { Button } from "../Button";
 
 import {
     BuscarInputContainer,
-    Column,
     Container,
     Input,
     Menu,
@@ -19,7 +18,7 @@ const Header = ({autenticado}) => {
     <Wrapper>
         <Container>
             <Row>
-              <img src="#" alt="Logo da dio" />
+              <img src={logo} alt="Logo da dio" />
               {autenticado ? (
                 <>
               <BuscarInputContainer>
@@ -32,10 +31,12 @@ const Header = ({autenticado}) => {
             </Row>
             <Row>
                 {autenticado ? (
-                  <UserPicture src=""/> ) : ( <>
-                <MenuRight href="#">Home</MenuRight>
-                <Button title="Entrar"/>
-                <Button title="Cadastrar"/>
+                  <UserPicture src="https://avatars.githubusercontent.com/u/26422835?v=4" /> 
+                  ) : ( 
+                  <>
+                  <MenuRight href="#">Home</MenuRight>
+                  <Button title="Entrar"/>
+                  <Button title="Cadastrar"/>
                 </> )}
             </Row>
         </Container>
