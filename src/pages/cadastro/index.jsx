@@ -9,7 +9,7 @@ import { Input } from "../../components/Input";
 import { api } from "../../services/api";
 
 import { Container, Title, Column, 
-        EsqueciText, Row, TitleLogin, Wrapper } from "./styles"
+        FazerLoginText, Row, TitleLogin, Wrapper, SubtitleLogin } from "./styles"
 
 const schema = yup
     .object({
@@ -61,15 +61,23 @@ const Cadastro = () => {
             </Column>    
             <Column>
                 <Wrapper>
-                    <TitleLogin>Faça seu cadastro</TitleLogin>
+                    <TitleLogin>Comece agora grátis</TitleLogin>
+                    <SubtitleLogin>Crie sua conta e make the change.</SubtitleLogin>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input name="nome" errorMessage={errors?.nome?.message} control={control} placeholder="Nome" leftIcon={<MdEmojiEmotions />} />
+                        <Input name="nome" errorMessage={errors?.nome?.message} control={control} placeholder="Nome completo" leftIcon={<MdEmojiEmotions />} />
                         <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
                         <Input name="senha" errorMessage={errors?.senha?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
-                        <Button title="Cadastrar" variant="secondary" type="submit" />
+                        <Button title="Criar minha conta" variant="secondary" type="submit" />
                     </form>
                     <Row>
-                        <EsqueciText>Esqueci minha senha</EsqueciText>
+                        <SubtitleLogin>
+                            Ao clicar em "criar minha conta grátis",
+                            declaro que aceito as Políticas de 
+                            Privacidade e os Termos de Uso da DIO.
+                        </SubtitleLogin>
+                    </Row>
+                    <Row>
+                        <FazerLoginText>Já tenho conta. <em>Fazer login</em></FazerLoginText>
                     </Row>
                 </Wrapper>
             </Column>

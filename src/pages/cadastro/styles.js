@@ -16,31 +16,35 @@ export const Title = styled.h2`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 22px;
-    width: 320px;
+    font-size: 32px;
+    width: 388px;
     margin-bottom: 20px;
-    line-height: 44px;
+    line-height: normal;
 
-    color: #FFFFFF;
+    color: #FFF;
 `
 
 export const TitleLogin = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 20px;
-    line-height: 44px;
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: normal;
+    width: 368px;
+
+    color: #FFF;
 `
 export const SubtitleLogin = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    margin-bottom: 35px;
-    line-height: 25px;
+    line-height: normal;
+    width: 372px;
+    margin-bottom: 20px;
 `
-export const EsqueciText = styled.p`
+export const FazerLoginText = styled.p`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -48,7 +52,17 @@ export const EsqueciText = styled.p`
     margin-bottom: 35px;
     line-height: 25px;
 
-    color: #E5E844;
+    color: #FFF;
+
+    em {
+        color: #23DD7A;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 35px;
+        line-height: 25px;
+    }
 `
 
 export const CriarText = styled.p`
