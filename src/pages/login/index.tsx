@@ -10,25 +10,26 @@ import { api } from "../../services/api";
 
 import { Container, Title, Column, CriarText, 
     EsqueciText, Row, SubtitleLogin, TitleLogin, Wrapper } from "./styles"
+import { IFormData } from "./types";
 
 const schema = yup
     .object({
       email: yup.string().email('email não é valido').required('Campo obrigatorio'),
-      senha: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatorio'),
+      password: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatorio'),
     }).required()
 
 const Login = () => {
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData: IFormData) => {
         try{
-            const { data } = await api.get(`/users?email=${formData.email}&senha=${formData.senha}`);
+            const { data } = await api.get(`/users?email=${formData.email}&senha=${formData.password}`);
             console.log("retorna api", data);
 
             if(data.length && data[0].id){
@@ -59,7 +60,7 @@ const Login = () => {
                     <SubtitleLogin>Faça seu login e make the change.</SubtitleLogin>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
-                        <Input name="senha" errorMessage={errors?.senha?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
+                        <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
                         <Button title="Entrar" variant="secondary" type="submit" />
                     </form>
                     <Row>

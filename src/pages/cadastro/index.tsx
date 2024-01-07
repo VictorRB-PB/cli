@@ -10,24 +10,25 @@ import { api } from "../../services/api";
 
 import { Container, Title, Column, 
         FazerLoginText, Row, TitleLogin, Wrapper, SubtitleLogin } from "./styles"
+import { IFormData } from "./types";
 
 const schema = yup
     .object({
       nome: yup.string().min(2, 'No minimo 2 caracteres').required('Campo obrigatorio'),
       email: yup.string().email('Email não é valido').required('Campo obrigatorio'),
-      senha: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatorio'),
+      password: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatorio'),
     }).required()
 
 const Cadastro = () => {
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData: IFormData) => {
         try{
             const { data } = await api.get(`users?email=${formData.email}`);
             console.log("retorna api", data);
@@ -38,11 +39,11 @@ const Cadastro = () => {
                 await api.post('users', {
                     nome: formData.nome,
                     email: formData.email,
-                    senha: formData.senha})
-                    .then(({formData}) => { 
+                    senha: formData.password})
+                    .then(() => { 
                     alert('Usuario cadastrado com sucesso')
                     navigate("/login")})
-                    .catch(({formData}) => 
+                    .catch(() => 
                     alert('Houve algum erro'));
             }
         }catch(e){
@@ -66,7 +67,7 @@ const Cadastro = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Input name="nome" errorMessage={errors?.nome?.message} control={control} placeholder="Nome completo" leftIcon={<MdEmojiEmotions />} />
                         <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
-                        <Input name="senha" errorMessage={errors?.senha?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
+                        <Input name="senha" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
                         <Button title="Criar minha conta" variant="secondary" type="submit" />
                     </form>
                     <Row>
