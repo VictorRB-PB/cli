@@ -83,6 +83,18 @@
       "email": "amaral@tadel.com",
       "senha": "asdasdasd",
       "id": 14
+    },
+    {
+      "nome": "novo",
+      "email": "novo@denovo.com",
+      "senha": "asdadczxc",
+      "id": 15
+    },
+    {
+      "nome": "novo3",
+      "email": "novamente@teste.com",
+      "senha": "lkjnm",
+      "id": 16
     }
   ]
 }

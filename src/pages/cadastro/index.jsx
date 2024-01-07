@@ -41,7 +41,7 @@ const Cadastro = () => {
                     senha: formData.senha})
                     .then(({formData}) => { 
                     alert('Usuario cadastrado com sucesso')
-                    navigate("/feed")})
+                    navigate("/login")})
                     .catch(({formData}) => 
                     alert('Houve algum erro'));
             }
@@ -50,8 +50,6 @@ const Cadastro = () => {
         }
     };
         
-    console.log('errors', errors);
-
     return (<>
         <Header />
         <Container>
