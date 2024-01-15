@@ -4,11 +4,12 @@ import { UserInfo } from "../../components/UserInfo";
 import { Column, Container, Title, TitleHighLight} from "./styles"
 
 const Feed = () => {
+    
     return (<>
-        <Header autenticado={true}/>
+        <Header />
         <Container>
             <Column flex={3}>
-                <Title>Feed</Title>
+            <Title>Feed</Title>
             <Card/>
             <Card/>
             <Card/>

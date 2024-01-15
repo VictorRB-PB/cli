@@ -14,7 +14,7 @@ import { IFormData } from "./types";
 
 const schema = yup
     .object({
-      nome: yup.string().min(2, 'No minimo 2 caracteres').required('Campo obrigatorio'),
+      name: yup.string().min(2, 'No minimo 2 caracteres').required('Campo obrigatorio'),
       email: yup.string().email('Email não é valido').required('Campo obrigatorio'),
       password: yup.string().min(3, 'No minimo 3 caracteres').required('Campo obrigatorio'),
     }).required()
@@ -37,9 +37,9 @@ const Cadastro = () => {
                 alert('Email já cadastrado');
             }else{
                 await api.post('users', {
-                    nome: formData.nome,
+                    name: formData.name,
                     email: formData.email,
-                    senha: formData.password})
+                    password: formData.password})
                     .then(() => { 
                     alert('Usuario cadastrado com sucesso')
                     navigate("/login")})
@@ -65,7 +65,7 @@ const Cadastro = () => {
                     <TitleLogin>Comece agora grátis</TitleLogin>
                     <SubtitleLogin>Crie sua conta e make the change.</SubtitleLogin>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input name="nome" errorMessage={errors?.nome?.message} control={control} placeholder="Nome completo" leftIcon={<MdEmojiEmotions />} />
+                        <Input name="nome" errorMessage={errors?.name?.message} control={control} placeholder="Nome completo" leftIcon={<MdEmojiEmotions />} />
                         <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
                         <Input name="senha" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
                         <Button title="Criar minha conta" variant="secondary" type="submit" />

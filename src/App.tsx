@@ -10,10 +10,12 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import { AuthContextProvider } from "./context/auth";
 
-function App() {
+const  App = () => {
   return (
     <Router>
+      <AuthContextProvider>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,6 +23,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
+      </AuthContextProvider>
     </Router>
   );
 }

@@ -1,5 +1,4 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo-dio.png";
 import { Button } from "../Button";
 
@@ -13,9 +12,11 @@ import {
     UserPicture,
     Wrapper
 } from "./styles"
-import { IHeader } from './types';
+import { useAuth } from '../../hooks/useAuth';
 
-const Header = ({autenticado}: IHeader) => {
+const Header = () => {
+
+  const { user, handleSignOut } = useAuth();
 
   const navigate = useNavigate();
 
@@ -31,8 +32,10 @@ const Header = ({autenticado}: IHeader) => {
     <Wrapper>
         <Container>
             <Row>
+              <Link to="/">
               <img src={logo} alt="Logo da dio" />
-              {autenticado ? (
+              </Link>
+              {user.id ? (
                 <>
               <BuscarInputContainer>
                 <Input placeholder='Buscar...'  />    
@@ -43,8 +46,11 @@ const Header = ({autenticado}: IHeader) => {
               ): null}
             </Row>
             <Row>
-                {autenticado ? (
+                {user.id ? (
+                  <>
                   <UserPicture src="https://avatars.githubusercontent.com/u/26422835?v=4" /> 
+                  <a href="#" onClick={handleSignOut}>Sair</a>
+                  </>
                   ) : ( 
                   <>
                   <MenuRight href="/">Home</MenuRight>

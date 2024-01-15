@@ -72,6 +72,7 @@ export const UserPicture = styled.img`
     height: 22px;
     border-radius: 22px;
     birder: 2px solid #FFFFFF;
+    margin-right: 12px;
 `
 
 export const Input = styled.input`

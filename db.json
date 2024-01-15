@@ -2,98 +2,98 @@
   "users": [
     {
       "id": 1,
-      "nome": "Victor",
+      "name": "Victor",
       "email": "victor@email.com",
-      "senha": "123456"
+      "password": "123456"
     },
     {
       "id": 2,
-      "nome": "José",
+      "name": "José",
       "email": "jose@email.com",
-      "senha": "123456"
+      "password": "123456"
     },
     {
-      "nome": "adamastor",
+      "name": "adamastor",
       "email": "adamastor@email.com",
-      "senha": "12345",
+      "password": "12345",
       "id": 3
     },
     {
-      "nome": "pastor",
+      "name": "pastor",
       "email": "pastor@email.com",
-      "senha": "12345",
+      "password": "12345",
       "id": 4
     },
     {
-      "nome": "asdasdasd",
+      "name": "asdasdasd",
       "email": "lol@lol.com",
-      "senha": "12345",
+      "password": "12345",
       "id": 5
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "1478963",
+      "password": "1478963",
       "id": 6
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "1478954",
+      "password": "1478954",
       "id": 7
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "123asdads",
+      "password": "123asdads",
       "id": 8
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "1478541",
+      "password": "1478541",
       "id": 9
     },
     {
-      "nome": "boo",
+      "name": "boo",
       "email": "asdasd@asdasd",
-      "senha": "asdasd",
+      "password": "asdasd",
       "id": 10
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "123asd",
+      "password": "123asd",
       "id": 11
     },
     {
-      "nome": "victor",
+      "name": "victor",
       "email": "victor@email.com",
-      "senha": "tgbnhy",
+      "password": "tgbnhy",
       "id": 12
     },
     {
-      "nome": "asdaasdasd",
+      "name": "asdaasdasd",
       "email": "asdasd@asdadasdadasdasd",
-      "senha": "asdadasdasdasd",
+      "password": "asdadasdasdasd",
       "id": 13
     },
     {
-      "nome": "tadel",
+      "name": "tadel",
       "email": "amaral@tadel.com",
-      "senha": "asdasdasd",
+      "password": "asdasdasd",
       "id": 14
     },
     {
-      "nome": "novo",
+      "name": "novo",
       "email": "novo@denovo.com",
-      "senha": "asdadczxc",
+      "password": "asdadczxc",
       "id": 15
     },
     {
-      "nome": "novo3",
+      "name": "novo3",
       "email": "novamente@teste.com",
-      "senha": "lkjnm",
+      "password": "lkjnm",
       "id": 16
     }
   ]
